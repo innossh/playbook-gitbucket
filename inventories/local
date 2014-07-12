@@ -1,2 +1,8 @@
-[gitbucket]
+[local-gitbucket]
 192.168.33.11
+
+[gitbucket:children]
+local-gitbucket
+
+[local:children]
+gitbucket

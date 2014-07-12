@@ -1,0 +1,11 @@
+<VirtualHost *:80>
+    ServerName {{ gitbucket.server_name }}
+    ServerAdmin gitbucket@sample.com
+    DocumentRoot /var/www/html
+    ErrorLog logs/gitbucket-error_log
+    CustomLog logs/gitbucket-access_log common
+
+    ProxyPreserveHost On
+    ProxyPass / http://localhost:8080/
+    ProxyPassReverse / http://localhost:8080/
+</VirtualHost>

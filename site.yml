@@ -8,3 +8,4 @@
     - ../common-roles/base
     - ../common-roles/jetty
     - ../common-roles/apache
+    - gitbucket

@@ -1,0 +1,4 @@
+---
+# GitBucket staging vars
+gitbucket:
+  server_name: "gitbucket.sample.com"

@@ -1,0 +1,7 @@
+---
+# GitBucket vars
+gitbucket_version: 2.0
+gitbucket_archive_name: gitbucket.war
+gitbucket_archive_url: "https://github.com/takezoe/gitbucket/releases/download/{{ gitbucket_version }}/{{ gitbucket_archive_name }}"
+gitbucket_deploy_dir: /opt/jetty/webapps
+gitbucket_deploy_name: ROOT.war

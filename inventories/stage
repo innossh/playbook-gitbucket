@@ -1,0 +1,8 @@
+[stage-gitbucket]
+# write stage gitbucket host
+
+[gitbucket:children]
+stage-gitbucket
+
+[stage:children]
+gitbucket

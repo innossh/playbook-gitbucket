@@ -1,0 +1,16 @@
+---
+# Install GitBucket tasks
+- name: download gitbucket {{ gitbucket_version }} war
+  get_url: url="{{ gitbucket_archive_url }}" dest="{{ download_path }}/{{ gitbucket_archive_name }}"
+
+- name: deploy gitbucket war
+  command: cp -p {{ download_path }}/{{ gitbucket_archive_name }} {{ gitbucket_deploy_dir }}/{{ gitbucket_deploy_name }}
+  notify: restart jetty
+
+- name: change owner gitbucket war
+  file: path="{{ gitbucket_deploy_dir }}/{{ gitbucket_deploy_name }}" owner=jetty group=jetty mode=0664
+  notify: restart jetty
+
+- name: set gitbucket.conf file
+  template: src=gitbucket.conf.j2 dest=/etc/httpd/conf.d/gitbucket.conf owner=root group=root mode=0664
+  notify: restart httpd

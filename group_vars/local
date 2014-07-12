@@ -1,0 +1,4 @@
+---
+# GitBucket local vars
+gitbucket:
+  server_name: "{{ local_vms.gitbucket.hosts }}"
